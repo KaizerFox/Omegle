@@ -28,6 +28,7 @@ om.on("gotMessage", function(msg) {
 })
 
 om.on("strangerDisconnected", () => {
+    session = false
     omchannel.send("Stranger Disconnected")
 })
 
@@ -54,7 +55,10 @@ bot.on("message", function(message) {
                 message.channel.send("Disconnected")
             }
             break
-
+        
+        case "invite": 
+                message.channel.send("<https://discord.com/oauth2/authorize?client_id=742758491281948813&scope=bot&permissions=8>")
+            break
     }
 
 })
